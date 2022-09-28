@@ -1,0 +1,2 @@
+[pi]
+pivpn ansible_host=10.10.0.206 ansible_user=torben

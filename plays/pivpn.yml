@@ -1,0 +1,6 @@
+---
+
+- hosts:
+    - pivpn
+  roles:
+    - role: ansible-role-pivpn

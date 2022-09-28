@@ -1,0 +1,4 @@
+roles/
+roles_galaxy/
+venv/
+.vault-pass
