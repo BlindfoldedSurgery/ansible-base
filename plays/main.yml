@@ -1,4 +1,9 @@
 ---
+- hosts: mgmt
+  tasks:
+    - name: set loadbalancer ip
+      ansible.builtin.set_fact:
+        loadbalancer_ip: "{{ hostvars[inventory_hostname][\"groups\"][\"loadbalancer\"]|first }}"
 
 - import_playbook: os-baseconfig.yml
 - import_playbook: rke2.yml
