@@ -4,13 +4,13 @@ collections:
 - name: kubernetes.core
   version: 2.3.2
 
-# roles:
-#   - name: ansible-role-rke2
-#     src: git+github.com:torbencarstens/ansible-role-rke2.git
-#     version: master
-#   - name: ansible-role-cluster-baseconfig
-#     src: git+github.com:torbencarstens/ansible-role-cluster-baseconfig.git
-#     version: master
-#   - name: ansible-role-cluster-baseconfig
-#     src: git+github.com:torbencarstens/ansible-role-os-baseconfig.git
-#     version: master
+roles:
+  - name: ansible-role-rke2
+    src: git+git@github.com:torbencarstens/ansible-role-rke2.git
+    version: master
+  - name: ansible-role-cluster-baseconfig
+    src: git+git@github.com:torbencarstens/ansible-role-cluster-baseconfig.git
+    version: master
+  - name: ansible-role-os-baseconfig
+    src: git+git@github.com:torbencarstens/ansible-role-os-baseconfig.git
+    version: master
