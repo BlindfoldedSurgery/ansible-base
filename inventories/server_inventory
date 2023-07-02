@@ -1,0 +1,12 @@
+[all:children]
+mgmt
+master
+worker
+
+[mgmt]
+localhost ansible_connection=local ansible_python_interpreter=/home/torben/projects/ansible/ansible-base/venv/bin/python3
+
+[master]
+master0 ansible_host=162.55.58.163 ansible_user=root
+
+[worker]

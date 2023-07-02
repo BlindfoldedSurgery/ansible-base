@@ -1,5 +1,5 @@
 ---
 
 - import_playbook: os-baseconfig.yml
-- import_playbook: pihole.yml
-- import_playbook: pivpn.yml
+- import_playbook: rke2.yml
+- import_playbook: cluster-baseconfig.yml

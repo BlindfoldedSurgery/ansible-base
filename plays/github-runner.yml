@@ -1,6 +1,0 @@
----
-
-- hosts:
-    - pivpn
-  roles:
-    - role: ansible-role-github-runner

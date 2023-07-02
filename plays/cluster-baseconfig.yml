@@ -1,0 +1,9 @@
+
+- hosts:
+  - mgmt
+  tasks:  
+    - name: include rke2 vault
+      ansible.builtin.include_vars:
+        file: rke2_vault
+  roles:
+  - role: ansible-role-cluster-baseconfig

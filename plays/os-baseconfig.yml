@@ -1,6 +1,6 @@
----
 
 - hosts:
-    - pivpn
+  - master
+  - worker
   roles:
-    - role: ansible-role-os-baseconfig
+  - role: ansible-role-os-baseconfig
