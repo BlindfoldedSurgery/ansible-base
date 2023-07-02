@@ -5,3 +5,6 @@ venv/
 .vault-pass
 
 .vscode
+
+terraform.tfstate
+.env
