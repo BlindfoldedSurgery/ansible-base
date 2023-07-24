@@ -9,3 +9,5 @@ pip install --upgrade pip
 pip install -r requirements.txt
 
 ansible-galaxy install -r requirements.yml
+
+source venv/bin/activate
