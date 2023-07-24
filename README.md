@@ -2,11 +2,9 @@
 
 ## run a playbook
 
-`ansible-playbook plays/{{ filename }}.yml -l {{ hosts }} -i inventories/{{ inventory }} --vault-id base@prompt`
+example to run everything (`plays/main.yml`) (with pre-existing `.vault-pass` file):
 
-example for github-runner (with pre-existing `.vault-pass` file):
-
-`ansible-playbook plays/github-runner.yml -l pivpn -i inventories/pi_management_inventory --vault-password-file .vault-pass`
+`ansible-playbook -i inventories/dynamic_inventory.py -i inventories/server_inventory plays/main.yml --vault-password-file .vault-pass`
 
 
 ## vault
