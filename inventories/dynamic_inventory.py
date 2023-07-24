@@ -33,9 +33,6 @@ def find_loadbalancer_resource(tfstate: dict) -> dict:
 
 
 def retrieve_terraform_file(api, organization: str, workspace_id: str):
-    with open("terraform.tfstate") as f:
-        return json.load(f)
-
     api.set_org(organization)
     current_state_information = api.state_versions.get_current(workspace_id)
 
