@@ -2,12 +2,13 @@
 
 import json
 import os
-import sys
 
 from collections import defaultdict
+from io import BytesIO, TextIOWrapper
 
+import boto3
 import requests
-from terrasnek.api import TFC, TFCStateVersions
+from botocore.config import Config
 
 
 def flatten(l):
@@ -32,17 +33,29 @@ def find_loadbalancer_resource(tfstate: dict) -> dict:
     ][0]
 
 
-def retrieve_terraform_file(api, organization: str, workspace_id: str):
-    api.set_org(organization)
-    current_state_information = api.state_versions.get_current(workspace_id)
+def retrieve_terraform_file(bucket_name: str, key: str, endpoint: str, region: str) -> dict:
+    session = boto3.session.Session()
+    s3 = session.client(
+        service_name="s3",
+        endpoint_url=endpoint,
+        config=Config(
+            region_name=region,
+        ),
+    )
 
-    tfstate_url = current_state_information["data"]["attributes"]["hosted-state-download-url"]
-    return requests.get(tfstate_url).json()
+    filename = "./terraform.tfstate"
+    s3.download_file(bucket_name, key, filename)
+
+    with open(filename) as f:
+        return json.load(f)
 
 
-def main(token: str):
-    api = TFC(token, url="https://app.terraform.io")
-    tfstate = retrieve_terraform_file(api, "torbencarstens", "ws-KwnGnQoVuwnpUH1d")
+def main():
+    endpoint = "https://5487401ce26c58bc1fa7725833ede7ae.r2.cloudflarestorage.com"
+    region = "us-east-1"
+    bucket_name = "blindfoldedsurgery"
+    key = "blindfoldedsurgery/BlindfoldedSurgery/terraform-github.state"
+    tfstate = retrieve_terraform_file(bucket_name, key, endpoint, region)
 
     out = defaultdict(dict)
     out["master"] = defaultdict(dict)
@@ -63,7 +76,7 @@ def main(token: str):
         out["_meta"]["hostvars"][name]["ansible_host"] = external_ipv4
 
     out["loadbalancer"]["children"] = ["loadbalancer_external", "loadbalancer_internal"]
-    out["loadbalancer_external"]["hosts"] = [tfstate["outputs"]["ipv4"]["value"]]
+    out["loadbalancer_external"]["hosts"] = [tfstate["outputs"]["loadbalancer_ipv4"]["value"]]
     lb_resource = find_loadbalancer_resource(tfstate)
     out["loadbalancer_internal"]["hosts"] = [lb_resource["instances"][0]["attributes"]["ip"]]
 
@@ -71,5 +84,4 @@ def main(token: str):
 
 
 if __name__ == "__main__":
-    token = os.getenv("TFC_TOKEN")
-    main(token)
+    main()
