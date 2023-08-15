@@ -54,7 +54,7 @@ def main():
     endpoint = "https://5487401ce26c58bc1fa7725833ede7ae.r2.cloudflarestorage.com"
     region = "us-east-1"
     bucket_name = "blindfoldedsurgery"
-    key = "blindfoldedsurgery/BlindfoldedSurgery/terraform-github.state"
+    key = "blindfoldedsurgery/rke2/terraform.tfstate"
     tfstate = retrieve_terraform_file(bucket_name, key, endpoint, region)
 
     out = defaultdict(dict)
