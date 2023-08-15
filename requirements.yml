@@ -6,11 +6,11 @@ collections:
 
 roles:
   - name: ansible-role-rke2
-    src: git+git@github.com:torbencarstens/ansible-role-rke2.git
+    src: git+git@github.com:BlindfoldedSurgery/ansible-role-rke2.git
     version: master
   - name: ansible-role-cluster-baseconfig
-    src: git+git@github.com:torbencarstens/ansible-role-cluster-baseconfig.git
+    src: git+git@github.com:BlindfoldedSurgery/ansible-role-cluster-baseconfig.git
     version: master
   - name: ansible-role-os-baseconfig
-    src: git+git@github.com:torbencarstens/ansible-role-os-baseconfig.git
+    src: git+git@github.com:BlindfoldedSurgery/ansible-role-os-baseconfig.git
     version: master
