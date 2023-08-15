@@ -1,4 +1,4 @@
-ansible==8.2.0
+ansible==8.3.0
 boto3==1.28.26
 Jinja2==3.1.2
 PyYAML==6.0.1
