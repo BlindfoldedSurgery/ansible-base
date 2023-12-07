@@ -1,6 +1,6 @@
-ansible==9.0.1
-boto3==1.29.6
+ansible==9.1.0
+boto3==1.33.9
 Jinja2==3.1.2
 PyYAML==6.0.1
-kubernetes==27.2.0
+kubernetes==28.1.0
 requests==2.31.0
