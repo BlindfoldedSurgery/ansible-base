@@ -1,5 +1,5 @@
-
-- hosts:
-  - mgmt
+- name: Setup basic cluster functionality (e.g. argocd)
+  hosts:
+    - mgmt
   roles:
-  - role: ansible-role-cluster-baseconfig
+    - role: ansible-role-cluster-baseconfig

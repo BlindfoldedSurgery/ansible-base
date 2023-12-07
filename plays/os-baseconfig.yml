@@ -1,6 +1,6 @@
-
-- hosts:
-  - master
-  - worker
+- name: Setup OS for rke2 install
+  hosts:
+    - master
+    - worker
   roles:
-  - role: ansible-role-os-baseconfig
+    - role: ansible-role-os-baseconfig

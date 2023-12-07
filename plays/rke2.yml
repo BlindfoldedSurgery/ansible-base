@@ -1,6 +1,6 @@
-
-- hosts:
-  - master
-  - worker
+- name: Setup rke2
+  hosts:
+    - master
+    - worker
   roles:
-  - role: ansible-role-rke2
+    - role: ansible-role-rke2

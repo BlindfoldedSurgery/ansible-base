@@ -1,4 +1,7 @@
 ---
-- import_playbook: os-baseconfig.yml
-- import_playbook: rke2.yml
-- import_playbook: cluster-baseconfig.yml
+- name: OS-baseconfig
+  import_playbook: os-baseconfig.yml
+- name: RKE2
+  import_playbook: rke2.yml
+- name: Cluster-baseconfig
+  import_playbook: cluster-baseconfig.yml
