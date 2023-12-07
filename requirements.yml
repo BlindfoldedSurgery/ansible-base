@@ -10,7 +10,7 @@ roles:
     version: main
   - name: ansible-role-cluster-baseconfig
     src: git+https://github.com/BlindfoldedSurgery/ansible-role-cluster-baseconfig.git
-    version: master
+    version: main
   - name: ansible-role-os-baseconfig
     src: git+https://github.com/BlindfoldedSurgery/ansible-role-os-baseconfig.git
     version: master
