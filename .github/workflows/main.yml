@@ -19,5 +19,4 @@ jobs:
       - run: asdf plugin add ansible https://github.com/amrox/asdf-pyapp.git
       - run: asdf plugin add ansible-lint https://github.com/amrox/asdf-pyapp.git
       - uses: asdf-vm/actions/install@v3
-      - run: ansible-galaxy install -vr requirements.yml
       - run: ansible-lint --strict .
