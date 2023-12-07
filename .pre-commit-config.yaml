@@ -1,0 +1,10 @@
+repos:
+  - repo: local
+    hooks:
+      - id: lint
+        name: ansible-lint
+        entry: /bin/bash -c "ansible-lint plays/"
+        language: script
+        types:
+          - "yaml"
+        pass_filenames: false
