@@ -2,5 +2,34 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "local>BlindfoldedSurgery/renovate-config"
+  ],
+  "packageRules": [
+    {
+      "groupName": "Ansible",
+      "description": "Group ansible (and dependencies) updates",
+      "matchDepNames": [
+        "community.general",
+        "ansible",
+        "boto3",
+        "PyYAML",
+        "requests"
+      ],
+      "matchManagers": [
+        "ansible-galaxy",
+        "pip_requirements"
+      ]
+    },
+    {
+      "groupName": "Ansible-Kubernetes",
+      "description": "Group ansible-k8s + dependencies",
+      "matchDepNames": [
+        "kubernetes.core",
+        "kubernetes"
+      ],
+      "matchManagers": [
+        "ansible-galaxy",
+        "pip_requirements"
+      ]
+    }
   ]
 }
