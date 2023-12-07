@@ -30,6 +30,19 @@
         "ansible-galaxy",
         "pip_requirements"
       ]
+    },
+    {
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "matchManagers": [
+        "pip_requirements"
+      ],
+      "matchDepNames": [
+        "boto3"
+      ],
+      "automerge": true
     }
   ]
 }
