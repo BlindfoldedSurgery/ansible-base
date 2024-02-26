@@ -16,8 +16,7 @@
       ],
       "matchManagers": [
         "ansible-galaxy",
-        "pip_requirements",
-        "galaxy-collection"
+        "pip_requirements"
       ]
     },
     {
@@ -51,7 +50,7 @@
         "patch"
       ],
       "matchManagers": [
-        "galaxy-collection"
+        "ansible-galaxy"
       ],
       "matchDepNames": [
         "community.general"
