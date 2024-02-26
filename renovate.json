@@ -16,7 +16,8 @@
       ],
       "matchManagers": [
         "ansible-galaxy",
-        "pip_requirements"
+        "pip_requirements",
+        "galaxy-collection"
       ]
     },
     {
@@ -41,6 +42,19 @@
       ],
       "matchDepNames": [
         "boto3"
+      ],
+      "automerge": true
+    },
+    {
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "matchManagers": [
+        "galaxy-collection"
+      ],
+      "matchDepNames": [
+        "community.general"
       ],
       "automerge": true
     }
